@@ -73,3 +73,17 @@ _(차선의 정확한 위치와 point에 대한 instance 단위 특징들 예측
 ![CodeCogsEqn (5)](https://user-images.githubusercontent.com/54304718/113999622-28fab480-9895-11eb-8967-2d2bbddec5f6.png)
 
 ##### 4. Post-processing
+부드러운 차선 구성을 위한 과정(outlier와 잘못 예측된 차선 제거)  
+[STEP]
+  1. 6개의 starting point 잡기 (3개의 가장 낮은 point, 3개의 가장 왼쪽/오른쪽 point)  
+  (ex. 예측된 차선이 이미지 중심과 관련해 왼쪽에 있으면 가장 왼쪽 point로 설정)
+  2. 각 starting point보다 높은 point 중 starting point에서 가장 가까운 3개 point 선택
+  3. 1,2단계에서 선택된 두 point를 연결하는 line 고려
+  4. line과 또다른 point 사이의 거리 계산
+  5. margin 내에 있는 point 수 계산
+  6. 새로운 starting point로 임계값보다 최대값이 큰 point 선택 (임계값 = 나머지 point의 20%로 설정)  
+      해당 point가 출발점이 있는 동일한 cluster에 속하는 것으로 간주
+  7. 2단계에서 point를 찾을 수 없을 때까지 1~6단계 반복
+  8. 모든 starting point에 대하여 1~7단계까지 반복
+      결과 lane으로 최대 길이 cluster를 고려
+  9. 1~8단계까지 모든 예측된 lane에 대해 반복
