@@ -56,3 +56,8 @@ _(차선의 정확한 위치와 point에 대한 instance 단위 특징들 예측
 
 <**Loss Function**>  
 1. confidence (각 grid 안 신뢰도 score)  
+![CodeCogsEqn](https://user-images.githubusercontent.com/54304718/113986391-2a71b000-9888-11eb-81fb-82457728c0d4.png)
+  - Ne, Nn : grid 안의 point가 존재하는(e), 존재하지 않는(n) grid의 개수
+  - Ge, Gn : grid 세트 수
+  - gc* : ground truth value (1: key point 포함, 0: 미포함)
+  - gc : predicted vlaue of each cell in the confidence output
