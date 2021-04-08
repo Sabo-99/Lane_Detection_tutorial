@@ -38,4 +38,4 @@ _(차선의 정확한 위치와 point에 대한 instance 단위 특징들 예측
   4. FP 수치 떨어뜨림 (안정적인 자율 주행 수행)  
 ---
 ## Method
-![image](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.semanticscholar.org%2Fpaper%2FKey-Points-Estimation-and-Point-Instance-Approach-Ko-Jun%2Fcd67bc3dcd818653566ac0982ab0cdd39fa6a54e&psig=AOvVaw0UwzjfKvM6Qrbkq_vIbhP6&ust=1617950730989000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIjZl6qG7u8CFQAAAAAdAAAAABAD "PINet network")
+![image](https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&fname=http%3A%2F%2Fcfile8.uf.tistory.com%2Fimage%2F99D10E405EE5E17113AD3C "PINet network")
