@@ -62,4 +62,14 @@ _(차선의 정확한 위치와 point에 대한 instance 단위 특징들 예측
   - gc* : ground truth value (1: key point 포함, 0: 미포함)
   - gc : predicted vlaue of each cell in the confidence output  
 
-2. offset (각 point (x,y) 위치값 (0~1))
+2. offset (각 point (x,y) 위치값 (0~1))  
+![CodeCogsEqn (2)](https://user-images.githubusercontent.com/54304718/113988668-a967e800-988a-11eb-8650-93b1950dedf7.png)
+
+3. feature (차선 instance 정보 → 같은 instance일 경우 더 가깝게 학습)  
+![CodeCogsEqn (3)](https://user-images.githubusercontent.com/54304718/113991381-58a5be80-988d-11eb-9d89-fbf458ec0152.png)
+![CodeCogsEqn (4)](https://user-images.githubusercontent.com/54304718/113999221-cc979500-9894-11eb-8bb0-37d0f5cbbaac.png)
+
+4. 최종 Loss
+![CodeCogsEqn (5)](https://user-images.githubusercontent.com/54304718/113999622-28fab480-9895-11eb-8967-2d2bbddec5f6.png)
+
+##### 4. Post-processing
