@@ -23,3 +23,4 @@ _RGB 카메라로 차선 탐지 방법을 많이 사용하므로 해당 센서 �
   
 ##### Semantic Segmentation
 각 lane을 구별하는 multi-class 접근 방식으로 고정된 lane 수로 구성된 장면에만 사용 가능  
+\therefore) 입력 pixel 크기보다 lane에 대해 더 적은 양의 정확한 point 예측 $ 각 point를 instance로 구별
