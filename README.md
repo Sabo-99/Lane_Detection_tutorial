@@ -38,4 +38,4 @@ _(차선의 정확한 위치와 point에 대한 instance 단위 특징들 예측
   4. FP 수치 떨어뜨림 (안정적인 자율 주행 수행)  
 ---
 ## Method
-![image](/images/PINet network.png "PINet network")
+![image](/PINet_tutorial/PINet network.png "PINet network")
