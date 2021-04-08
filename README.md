@@ -11,9 +11,9 @@ Paperswithcode 사이트에서 lane detection 네트워크 중 가장 가벼운 
 ## Abstract  
 ##### 기존 sota 기술 문제점  
 1. 탐지 가능한 차선 개수 제한
-2. FP 비율 높음 : 불안정한 자율 주행
+2. FP 비율 높음 (불안정한 자율 주행)
   
-##### PINet의 개선 사항  
+##### PINet에서 제안점  
 1. (feature extraction 단계) Stacked Hourglass 방법 기반 -> 차선의 정확한 point 추정
 2. (추정된 point들) instance별 clustering 문제는 point-cloud cluster instance segmentation으로 해결
 3. 제안된 post-processing 방법을 통해 outlier 제거
@@ -25,9 +25,17 @@ _RGB 카메라로 차선 탐지 방법을 많이 사용하므로 해당 센서 �
 각 lane을 구별하는 multi-class 접근 방식으로 고정된 lane 수로 구성된 장면에만 사용 가능  
 ∴) 입력 pixel 크기보다 lane에 대해 더 적은 양의 정확한 point 예측 & 각 point를 instance로 구별  
 
-* 3 values (feature extraction 출력값)
+##### 3 values (feature extraction 출력값)  
 _(차선의 정확한 위치와 point에 대한 instance 단위 특징들 예측)_  
   1. Confidence : Grid 단위 예측값(각 grid에서 다음 block 이동시 안정적 학습 가능하도록 함)
   2. Offset : 차선이 위치한 정확한 point 좌표
   3. Feature : 차선 instance 단위 정보
 
+##### 제안하는 개선 사항  
+  1. compact output 출력 (모델 경량화)
+  2. post-processing으로 outlier 제거
+  3. 수평, 수직, 임의의 lane 수에 따른 차선 탐지
+  4. FP 수치 떨어뜨림 (안정적인 자율 주행 수행)  
+---
+## Method
+![image](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.semanticscholar.org%2Fpaper%2FKey-Points-Estimation-and-Point-Instance-Approach-Ko-Jun%2Fcd67bc3dcd818653566ac0982ab0cdd39fa6a54e&psig=AOvVaw0UwzjfKvM6Qrbkq_vIbhP6&ust=1617950730989000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIjZl6qG7u8CFQAAAAAdAAAAABAD "PINet network")
