@@ -39,3 +39,20 @@ _(차선의 정확한 위치와 point에 대한 instance 단위 특징들 예측
 ---
 ## Method
 <img src="https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&fname=http%3A%2F%2Fcfile8.uf.tistory.com%2Fimage%2F99D10E405EE5E17113AD3C" width="600" height="305">
+
+##### 1. Resizing Layer  
+- 입력 이미지 크기 ↓ (512x256 → 64x32)을 통해 연산량 ↓
+- convolution 연산과 maxpooling 사용  
+(conv → same bottleneck → maxpooling → same bottleneck → maxpooling → same bottleneck)  
+
+##### 2. Feature Extraction Layer  
+- Stacked Hourglass : 총 2개의 hourglass block(down-sample bottleneck + up-sample bottleneck)으로 구성
+- bottleneck layer를 활용하였기에 적은 연산량으로도 높은 성능을 보임
+- skip layer를 통해 다양한 크기의 디테일한 특징들을 유지
+- 차선 특징을 압축해서 예측  
+
+##### 3. Output Layer  
+- 각 grid 단위 3 values(confidence/offset/feature) 예측  
+
+<**Loss Function**>  
+1. confidence (각 grid 안 신뢰도 score)  
