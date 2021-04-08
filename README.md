@@ -23,5 +23,11 @@ _RGB 카메라로 차선 탐지 방법을 많이 사용하므로 해당 센서 �
   
 ##### Semantic Segmentation
 각 lane을 구별하는 multi-class 접근 방식으로 고정된 lane 수로 구성된 장면에만 사용 가능  
- 입력 pixel 크기보다 lane에 대해 더 적은 양의 정확한 point 예측 $ 각 point를 instance로 구별  
-/therefore
+∴) 입력 pixel 크기보다 lane에 대해 더 적은 양의 정확한 point 예측 & 각 point를 instance로 구별  
+
+* 3 values (feature extraction 출력값)
+_(차선의 정확한 위치와 point에 대한 instance 단위 특징들 예측)_  
+  1. Confidence : Grid 단위 예측값(각 grid에서 다음 block 이동시 안정적 학습 가능하도록 함)
+  2. Offset : 차선이 위치한 정확한 point 좌표
+  3. Feature : 차선 instance 단위 정보
+
