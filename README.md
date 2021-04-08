@@ -69,7 +69,7 @@ _(차선의 정확한 위치와 point에 대한 instance 단위 특징들 예측
 ![CodeCogsEqn (3)](https://user-images.githubusercontent.com/54304718/113991381-58a5be80-988d-11eb-9d89-fbf458ec0152.png)
 ![CodeCogsEqn (4)](https://user-images.githubusercontent.com/54304718/113999221-cc979500-9894-11eb-8bb0-37d0f5cbbaac.png)
 
-4. 최종 Loss
+4. 최종 Loss  
 ![CodeCogsEqn (5)](https://user-images.githubusercontent.com/54304718/113999622-28fab480-9895-11eb-8967-2d2bbddec5f6.png)
 
 ##### 4. Post-processing
