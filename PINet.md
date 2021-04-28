@@ -88,6 +88,6 @@ _(차선의 정확한 위치와 point에 대한 instance 단위 특징들 예측
       결과 lane으로 최대 길이 cluster를 고려
   9. 1~8단계까지 모든 예측된 lane에 대해 반복
 
-<Reference>
-  [1] https://arxiv.org/pdf/2002.06604.pdf  
-  [2] https://go-hard.tistory.com/52
+##### Reference  
+[1] https://arxiv.org/pdf/2002.06604.pdf  
+[2] https://go-hard.tistory.com/52
