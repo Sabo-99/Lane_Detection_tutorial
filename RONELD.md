@@ -38,8 +38,22 @@ low-confidence noise 제거를 진행한다. 이 때 추출된 지점 주변 영
 
 딥러닝 모델 출력을 기반으로 잠재적인 데이터 active lane 표시를 식별하고, 우선 순위를 통해 높은 값을 나타내는 lane 표시들을 정렬한다. 또한, lane 표시가 active lane 표시로 잘못 식별될 수 있으므로, 식별된 lane 표시 외에도 현재 frame에 non-active lane 표시를 저장한다. (FP lane 표시로 인해 실제 active lane 표시가 non-active lane 표시로 잘못 분류되는 것을 방지한다.)  
 
+## Implementation  
+##### Before Starting  
+SCNN 또는 ENet-SAD(self attention distilation) 모델에 데이터를 입력하여 probability map 출력을 얻어내야한다.  
+
+- self attention  
+  self-supervised learning 기반. 스스로 attention을 계산한다. (Transformer 개념)  
+  (Q=K=V)
+- attention  
+  Encoder-Decoder 모델에서 중요한 특성 중 하나는 전체 입력 문장이 하나의 벡터로 압축된다는 것이다. Attention mechanism은 source 문장의 모든 정보를 고정 길이 벡터로 encoding해야하는 부담을 완화시킨다. (정보 손실 문제 해결)  
+  
+  ![attention](https://user-images.githubusercontent.com/54304718/116364010-b602af00-a83e-11eb-9949-d14b3a37e4df.png)  
+  
+  attention은 Q(query), K(key), V(value) 3개의 벡터를 입력으로 받아 query와 key-value 쌍을 출력에 mapping하는 것으로 설명된다. 각 값에 할당된 가중치는 해당 key에 대응되는 query에 대한 유사도로 계산된다.
 
 ##### Reference  
 [1] https://arxiv.org/pdf/2010.09548.pdf  
 [2] https://github.com/czming/RONELD-Lane-Detection  
 [3] https://go-hard.tistory.com/81
+[4] https://lv99.tistory.com/29
